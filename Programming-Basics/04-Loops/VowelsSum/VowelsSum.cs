@@ -28,6 +28,7 @@ namespace VowelsSum
                 }
             }
 
+
             Console.WriteLine(sum);
         }
     }
