@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_07.TheV_Logger</RootNamespace>
+    <RootNamespace>_08.Ranking</RootNamespace>
   </PropertyGroup>
 
 </Project>
