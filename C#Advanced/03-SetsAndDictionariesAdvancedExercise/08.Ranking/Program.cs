@@ -34,7 +34,6 @@ namespace _08.Ranking
                     {
                         candidates.Add(username, new Dictionary<string, int>());
                         candidates[username].Add(contest, points);
-
                     }
                     else
                     {
@@ -54,8 +53,6 @@ namespace _08.Ranking
 
                 candData = Console.ReadLine().Split("=>");
             }
-
-
 
             Dictionary<string, int> overal = new Dictionary<string, int>(candidates.Count);
 
