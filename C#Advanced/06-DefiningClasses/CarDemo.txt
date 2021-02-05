@@ -1,0 +1,48 @@
+using System;
+
+namespace CarManufacturer
+{
+    public class StartUpDemo
+    {
+        static void Main(string[] args)
+        {
+            string make = "Ford";
+            string model = "Focus Zetec";
+            int year = 2003;
+            double fuelQuantity = 55;
+            double fuelConsumption = 0.08;
+
+            Tire[] tires = new Tire[4]
+            {
+                new Tire(1, 2.0),
+                new Tire(1, 2.0),
+                new Tire(2, 2.2),
+                new Tire(2, 2.2),
+
+            };
+
+            Engine engine = new Engine(90, 64);
+
+            Car firstCar = new Car();
+            Car secondCar = new Car(make, model, year);
+            Car thirdCar = new Car(make, model, year, fuelQuantity, fuelConsumption);
+
+            Car newCar = new Car("Opel", "Corsa", 2011, 50, 0.06, engine, tires);
+
+            newCar.Drive(25);
+            Console.WriteLine(newCar.WhoIAM());
+
+            firstCar.Drive(100);
+            Console.WriteLine(firstCar.WhoIAM());
+
+            secondCar.Drive(5);
+            Console.WriteLine(secondCar.WhoIAM());
+
+            thirdCar.Drive(30);
+            Console.WriteLine(thirdCar.WhoIAM());
+
+
+
+        }
+    }
+}
