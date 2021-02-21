@@ -87,7 +87,7 @@ namespace Guild
                 guildSb.AppendLine($"{player.ToString()}");
             }
 
-            return guildSb.ToString();
+            return guildSb.ToString().TrimEnd();
         }
     }
 }
