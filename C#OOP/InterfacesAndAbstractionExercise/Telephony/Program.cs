@@ -4,41 +4,53 @@ using System.Text.RegularExpressions;
 
 namespace Telephony
 {
-    class Program
+    public class StartUp
     {
         static void Main(string[] args)
         {
             ISmartphonable smartphone = new Smartphone();
             IStationaryPhonable stacionary = new Stacionary();
 
-            string inputNumbers = Console.ReadLine(); 
-           
-            string pattern = @"(\b\d{10}\b)|(\b\d{7}\b)";
-            Regex phoneNumbers = new Regex(pattern);         
-            var validNumbers = phoneNumbers.Matches(inputNumbers);
+            string[] inputNumbers = Console.ReadLine().Split();
 
-            string inputSites = Console.ReadLine();
-            
-            string patternSites = @"(\b[a-zA-Z]+:\/\/[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+\b)|(\b[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+\b)|(\b[a-zA-Z]+:\/\/[a-zA-Z]+\.[a-zA-Z]+\b)|(\b[a-zA-Z]+\.[a-zA-Z]+\b)";
-            Regex sites = new Regex(patternSites);
-            var validSites = sites.Matches(inputSites);
-            
-            foreach (Match item in validNumbers)
+            string pattern = @"(\b\d{10}\b)|(\b\d{7}\b)";
+            Regex phoneNumbers = new Regex(pattern);
+
+            foreach (var item in inputNumbers)
             {
-                if (item.Length == 7)
+                if (phoneNumbers.IsMatch(item))
                 {
-                    stacionary.Dialing(item.ToString());
+                    if (item.Length == 7)
+                    {
+                        stacionary.Dialing(item.ToString());
+                    }
+                    else
+                    {
+                        smartphone.Calling(item.ToString());
+                    }
                 }
                 else
                 {
-                    smartphone.Calling(item.ToString());
+                    Console.WriteLine("Invalid number!");
                 }
             }
 
-            foreach (Match item in validSites)
+            string[] inputSites = Console.ReadLine().Split();
+
+            string patternSites = @"(\b[a-zA-Z]+:\/\/[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+\b)|(\b[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+\b)|(\b[a-zA-Z]+:\/\/[a-zA-Z]+\.[a-zA-Z]+\b)|(\b[a-zA-Z]+\.[a-zA-Z]+\b)";
+            Regex sites = new Regex(patternSites);
+
+            foreach (var item in inputSites)
             {
-                smartphone.Browsing(item.ToString());
-            }
+                if (sites.IsMatch(item))
+                {
+                    smartphone.Browsing(item.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Invalid URL!");
+                }
+            } 
         }
     }
 }
