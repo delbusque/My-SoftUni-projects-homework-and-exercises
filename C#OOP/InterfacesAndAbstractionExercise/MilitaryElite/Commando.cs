@@ -17,8 +17,13 @@ namespace MilitaryElite
 
         public List<Mission> Missions { get; set; }
 
-
-        //  <mission1 ToString()>
+        public void CompleteMission(Mission mission)
+        {
+            if (mission.State == "inProgress")
+            {
+                mission.State = "Finished";
+            }
+        }
 
         public override string ToString()
         {

@@ -8,5 +8,7 @@ namespace MilitaryElite
     {
         public List<Mission> Missions { get; set; }
 
+        public void CompleteMission(Mission mission);
+
     }
 }

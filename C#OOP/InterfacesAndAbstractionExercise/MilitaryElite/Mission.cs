@@ -15,15 +15,6 @@ namespace MilitaryElite
         public string CodeName { get; set; }
 
         public string State { get; set; }
-
-        public void CompleteMission()
-        {
-            if (State == "inProgress")
-            {
-                State = "Finished";
-            }
-        }
-
         public override string ToString()
         {
             return $"Code Name: {CodeName} State: {State}";
