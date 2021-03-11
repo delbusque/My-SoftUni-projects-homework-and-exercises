@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MilitaryElite
 {
-    public class SpecialisedSoldier : Private, ISpecialisedSoldier
+    public abstract class SpecialisedSoldier : Private, ISpecialisedSoldier
     {
 
         private string corps;

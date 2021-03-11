@@ -6,13 +6,19 @@ namespace MilitaryElite
 {
     public class Engineer : SpecialisedSoldier, IEngineer
     {
+        private List<IRepair> repairs;
+        
         public Engineer(string id, string firstName, string lastName, decimal salary, string corps)
             : base (id, firstName, lastName, salary, corps)
         {
-            Repairs = new List<Repair>();
+            repairs = new List<IRepair>();
         }
 
-        public List<Repair> Repairs { get; set; }
+        IReadOnlyCollection<IRepair> IEngineer.Repairs => repairs.AsReadOnly();
+        public void AddRepair(IRepair repair)
+        {
+            repairs.Add(repair);
+        }
 
         public override string ToString()
         {
@@ -21,7 +27,7 @@ namespace MilitaryElite
             sb.AppendLine($"Corps: {Corps}");
             sb.AppendLine($"Repairs:");
 
-            foreach (var repair in Repairs)
+            foreach (var repair in repairs)
             {
                 sb.AppendLine(repair.ToString());
             }

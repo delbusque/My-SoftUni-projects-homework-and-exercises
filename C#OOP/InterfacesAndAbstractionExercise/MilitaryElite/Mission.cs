@@ -12,7 +12,7 @@ namespace MilitaryElite
             State = state;
         }
 
-        public string CodeName { get; set; }
+        public string CodeName { get; private set; }
 
         public string State { get; set; }
 

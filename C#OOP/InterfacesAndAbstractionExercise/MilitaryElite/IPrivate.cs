@@ -6,6 +6,6 @@ namespace MilitaryElite
 {
     public interface IPrivate : ISoldier
     {
-        public decimal Salary { get; set; }
+        public decimal Salary { get;}
     }
 }

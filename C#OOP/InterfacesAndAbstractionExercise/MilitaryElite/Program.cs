@@ -8,7 +8,7 @@ namespace MilitaryElite
     {
         static void Main(string[] args)
         {
-            List<Soldier> list = new List<Soldier>();
+            List<ISoldier> list = new List<ISoldier>();
             List<Private> privates = new List<Private>();
 
             string[] input = Console.ReadLine().Split();
@@ -40,7 +40,7 @@ namespace MilitaryElite
                             {
                                 if (privateSoldier.Id == privatesIds[i])
                                 {
-                                    lieutenantGeneral.Privates.Add(privateSoldier);
+                                    lieutenantGeneral.AddPrivate(privateSoldier);
                                 }
                             }                          
                         }
@@ -61,7 +61,7 @@ namespace MilitaryElite
                                 int workedHours = int.Parse(repairs[i + 1]);
 
                                 Repair repair = new Repair(partName, workedHours);
-                                engineer.Repairs.Add(repair);
+                                engineer.AddRepair(repair);
                             }
                             list.Add(engineer);
                         }

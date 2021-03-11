@@ -6,13 +6,19 @@ namespace MilitaryElite
 {
     public class LieutenantGeneral : Private, ILieutenantGeneral
     {
+        private List<IPrivate> privates;
         public LieutenantGeneral(string id, string firstName, string lastName, decimal salary)
             : base(id, firstName, lastName, salary)
         {
-            Privates = new List<Private>();
+            privates = new List<IPrivate>();
         }
 
-        public List<Private> Privates { get; set; }
+        public IReadOnlyCollection<IPrivate> Privates => privates.AsReadOnly();
+
+        public void AddPrivate(IPrivate @private)
+        {
+            privates.Add(@private);
+        }
 
         public override string ToString()
         {

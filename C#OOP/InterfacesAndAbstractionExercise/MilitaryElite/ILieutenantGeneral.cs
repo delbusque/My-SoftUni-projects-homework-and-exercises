@@ -6,6 +6,8 @@ namespace MilitaryElite
 {
     public interface ILieutenantGeneral : ISoldier
     {
-        public List<Private> Privates { get; set; }
+        public IReadOnlyCollection<IPrivate> Privates { get;}
+
+        public void AddPrivate(IPrivate @private);
     }
 }

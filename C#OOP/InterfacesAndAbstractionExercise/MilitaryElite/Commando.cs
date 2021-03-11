@@ -6,8 +6,6 @@ namespace MilitaryElite
 {
     public class Commando : SpecialisedSoldier, ICommando
     {
-        private string corps;
-
         public Commando(string id, string firstName, string lastName, decimal salary, string corps)
             : base(id, firstName, lastName, salary, corps)
 

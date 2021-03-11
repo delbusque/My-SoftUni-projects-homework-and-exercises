@@ -12,7 +12,7 @@ namespace MilitaryElite
             Salary = salary;
         }
 
-        public decimal Salary { get; set ; }
+        public decimal Salary { get; private set; }
 
         public override string ToString()
         {

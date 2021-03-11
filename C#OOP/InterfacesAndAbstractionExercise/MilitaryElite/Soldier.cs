@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MilitaryElite
 {
-    public class Soldier : ISoldier
+    public abstract class Soldier : ISoldier
     {
         public Soldier(string id, string firstName, string lastName)
         {
@@ -13,8 +13,8 @@ namespace MilitaryElite
             LastName = lastName;
         }
 
-        public string Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Id { get; private set; }
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
     }
 }
