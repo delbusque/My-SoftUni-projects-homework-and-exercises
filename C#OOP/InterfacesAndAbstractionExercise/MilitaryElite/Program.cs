@@ -8,7 +8,7 @@ namespace MilitaryElite
     {
         static void Main(string[] args)
         {
-            List<ISoldier> list = new List<ISoldier>();
+            List<Soldier> list = new List<Soldier>();
             List<Private> privates = new List<Private>();
 
             string[] input = Console.ReadLine().Split();

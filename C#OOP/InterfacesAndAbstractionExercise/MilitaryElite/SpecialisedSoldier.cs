@@ -6,13 +6,23 @@ namespace MilitaryElite
 {
     public class SpecialisedSoldier : Private, ISpecialisedSoldier
     {
+
+        private string corps;
         public SpecialisedSoldier(string id, string firstName, string lastName, decimal salary, string corps)
-            : base (id, firstName, lastName, salary)
+            : base(id, firstName, lastName, salary)
         {
             Corps = corps;
         }
-        
-        public string Corps { get ; set;
+
+        public string Corps
+        {
+            get => corps; set
+            {
+                if (value == "Airforces" || value == "Marines")
+                {
+                    corps = value;
+                }
+            }
         }
     }
 }
