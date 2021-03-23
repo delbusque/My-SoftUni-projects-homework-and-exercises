@@ -8,17 +8,28 @@ namespace WarCroft.Entities.Inventory
 {
     public abstract class Bag : IBag
     {
-
         private List<Item> items;
+        private int load;
+        protected const int capacity = 100;
 
-        public Bag(int capacity = 100)
+        public Bag(int capacity = capacity)
         {
             Capacity = capacity;
+            items = new List<Item>();
         }
 
         public int Capacity { get; set; }
 
-        public int Load { get; }
+        public int Load { get => load;
+            set
+            {
+                foreach (var item in items)
+                {
+                    load += item.Weight;
+                }
+            }
+
+        }
 
         public IReadOnlyCollection<Item> Items { get => items.AsReadOnly(); }
 

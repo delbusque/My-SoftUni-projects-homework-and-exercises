@@ -2,6 +2,8 @@
 using WarCroft.Core;
 using WarCroft.Core.IO;
 using WarCroft.Core.IO.Contracts;
+using WarCroft.Entities.Characters;
+using WarCroft.Entities.Characters.Contracts;
 using WarCroft.Entities.Inventory;
 using WarCroft.Entities.Items;
 
@@ -10,8 +12,9 @@ namespace WarCroft
 	public class StartUp
 	{
 		public static void Main(string[] args)
-		{
+		{          
             
+
 
             IReader reader = new ConsoleReader();
             IWriter writer = new ConsoleWriter();

@@ -6,7 +6,9 @@ namespace WarCroft.Entities.Inventory
 {
     public class Satchel : Bag
     {
-        public Satchel(int capacity = 20) 
+        private const int capacity = 20;
+        
+        public Satchel(int capacity = capacity) 
             : base(capacity)
         {
         }

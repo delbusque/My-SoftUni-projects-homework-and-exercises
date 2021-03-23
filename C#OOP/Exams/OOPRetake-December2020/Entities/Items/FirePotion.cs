@@ -10,6 +10,7 @@ namespace WarCroft.Entities.Items
         public FirePotion(int weight = 5) 
             : base(weight)
         {
+            Weight = weight;
         }
 
         public int Weight { get; }
