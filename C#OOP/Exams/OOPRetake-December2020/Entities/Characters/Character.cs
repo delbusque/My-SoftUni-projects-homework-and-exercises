@@ -90,5 +90,18 @@ namespace WarCroft.Entities.Characters.Contracts
 				throw new InvalidOperationException(ExceptionMessages.AffectedCharacterDead);
 			}
 		}
-	}
+
+        public override string ToString()
+        {
+            if (IsAlive)
+            {
+				return $"{Name} - HP: {Health}/{BaseHealth}, AP: {Armor}/{BaseArmor}, Status: Alive";
+			}
+            else
+            {
+				return $"{Name} - HP: {Health}/{BaseHealth}, AP: {Armor}/{BaseArmor}, Status: Dead";
+			}
+
+		}
+    }
 }

@@ -4,6 +4,7 @@ using WarCroft.Entities.Characters;
 using WarCroft.Entities.Characters.Contracts;
 using WarCroft.Entities.Items;
 using System.Linq;
+using System.Text;
 
 namespace WarCroft.Core
 {
@@ -124,12 +125,58 @@ namespace WarCroft.Core
 
         public string GetStats()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var character in party.OrderByDescending(ch => ch.IsAlive)
+                .ThenBy(ch=>ch.Health).ToList())
+            {
+                sb.AppendLine(character.ToString());
+            }
+
+            return sb.ToString().TrimEnd();
         }
 
         public string Attack(string[] args)
         {
-            throw new NotImplementedException();
+            string attackerName = args[0];
+            string receiverName = args[1];
+
+            Warrior attacker = new Warrior(attackerName);
+
+            if (party.Contains(attacker))
+            {
+                Character reciever = party.Find(ch => ch.Name == receiverName);
+
+                if (party.Contains(reciever))
+                {
+                    if (attacker.IsAlive && !reciever.IsAlive)
+                    {
+                        return $"{attackerName} cannot attack!";
+                    }
+
+                    attacker.Attack(reciever);
+                    StringBuilder attack = new StringBuilder();
+
+                    attack.AppendLine($"{attackerName} attacks {receiverName} for {attacker.AbilityPoints} hit points!");
+                    attack.AppendLine($"{receiverName} has {reciever.Health}/{reciever.BaseHealth} HP and");
+                    attack.AppendLine($"{reciever.Armor}/{reciever.BaseArmor} AP left!");
+
+                    if (!reciever.IsAlive)
+                    {
+                        attack.AppendLine($"{reciever.Name} is dead!");
+                    }
+
+                    return attack.ToString();
+                }
+                else
+                {
+                    throw new ArgumentException($"Character {receiverName} not found!");
+                }
+            }
+            else
+            {
+                throw new ArgumentException($"Character {attackerName} not found!");
+            }
         }
 
         public string Heal(string[] args)
