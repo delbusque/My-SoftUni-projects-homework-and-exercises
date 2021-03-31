@@ -128,7 +128,7 @@ namespace WarCroft.Core
             StringBuilder sb = new StringBuilder();
 
             foreach (var character in party.OrderByDescending(ch => ch.IsAlive)
-                .ThenBy(ch=>ch.Health).ToList())
+                .ThenBy(ch => ch.Health).ToList())
             {
                 sb.AppendLine(character.ToString());
             }
@@ -181,7 +181,42 @@ namespace WarCroft.Core
 
         public string Heal(string[] args)
         {
-            throw new NotImplementedException();
+            string healerName = args[0];
+            string receiverName = args[1];
+
+            Priest priest = new Priest(healerName);
+
+            if (party.Contains(priest))
+            {
+                Character healReciever = party.Find(ch => ch.Name == receiverName);
+
+                if (party.Contains(healReciever))
+                {
+                    if (priest.IsAlive && !healReciever.IsAlive)
+                    {
+                        return $"{healerName} cannot heal!";
+                    }
+
+                    priest.Heal(healReciever);
+                    StringBuilder heal = new StringBuilder();
+                    heal.Append($"{healerName} heals {receiverName} for {priest.AbilityPoints}! {healReciever.Name} has {healReciever.Health} health now!");
+
+                    return heal.ToString();
+                }
+                else
+                {
+                    throw new ArgumentException($"Character {receiverName} not found!");
+
+                }
+
+            }
+            else
+            {
+                throw new ArgumentException($"Character {healerName} not found!");
+            }
+
+
+            
         }
     }
 }
