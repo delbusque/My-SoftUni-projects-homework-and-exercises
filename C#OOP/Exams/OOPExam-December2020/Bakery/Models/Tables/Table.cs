@@ -53,7 +53,7 @@ namespace Bakery.Models.Tables
         }
 
 
-        public bool IsReserved { get; set; } = true;
+        public bool IsReserved { get; set; } = false;
 
         public decimal Price
         {

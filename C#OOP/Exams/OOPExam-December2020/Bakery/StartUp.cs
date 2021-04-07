@@ -2,6 +2,7 @@
 {
     using Bakery.Core;
     using Bakery.Models.BakedFoods;
+    using Bakery.Utilities.Enums;
 
     public class StartUp
     {
@@ -11,8 +12,6 @@
            var engine = new Engine();
           
            engine.Run();
-          
-
   
         }
     }
