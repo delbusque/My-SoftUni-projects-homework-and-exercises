@@ -9,7 +9,6 @@ namespace NeedForSpeed
         public CrossMotorcycle(int horsePower, double fuel)
             :base(horsePower, fuel)
         {
-
         }
     }
 }
