@@ -83,11 +83,11 @@ namespace Animals
                     break;
 
                 case "Tomcat":
-                    currentAnimal = new Tomcat(name, age, gender);
+                    currentAnimal = new Tomcat(name, age);
                     break;
 
                 case "Kitten":
-                    currentAnimal = new Kitten(name, age, gender);
+                    currentAnimal = new Kitten(name, age);
                     break;
             }
 

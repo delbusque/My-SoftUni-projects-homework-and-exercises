@@ -8,10 +8,9 @@ namespace Animals
     {
         private const string kittenGender = "female";
         
-        public Kitten(string name, int age, string gender) 
-            : base(name, age, gender)
+        public Kitten(string name, int age) 
+            : base(name, age, kittenGender)
         {
-            Gender = kittenGender;
         }
 
         public override string ProduceSound()
