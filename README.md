@@ -1,2 +1,3 @@
-My SoftUni projects, homework and exercises
+# C#
+exercises and homeworks at the SOFTWARE UNIVERSITY ...
 
