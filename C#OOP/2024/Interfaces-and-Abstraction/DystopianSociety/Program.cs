@@ -33,3 +33,9 @@ string last3 = Console.ReadLine();
 List<IIdentifiable> detained = societyList.Where(m => m.Id.Substring(m.Id.Length - 3).Equals(last3)).ToList();
 
 detained.ForEach(d => Console.WriteLine(d.Id));
+
+Citizen citys = new Citizen("Jo", 33, "1hedUIS");
+citys.setBirthday(new DateOnly(1988, 2, 24));
+
+var dateFormatted = citys.Birthday.ToString("dd/MM/yyyy");
+Console.WriteLine(dateFormatted);

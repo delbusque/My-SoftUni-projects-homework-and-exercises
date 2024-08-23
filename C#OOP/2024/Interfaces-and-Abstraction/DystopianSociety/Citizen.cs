@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DystopianSociety
 {
-    public class Citizen : IIdentifiable, INamable
+    public class Citizen : IIdentifiable, ILivingCreater
     {
         public Citizen(string name, int age, string id)
         {
@@ -19,5 +19,11 @@ namespace DystopianSociety
         public string Id { get; private set; }
         public int Age { get; private set; }
         public string Name { get ; private set ; }
+        public DateOnly Birthday { get; private set; }
+
+        public void setBirthday(DateOnly birthday) { 
+        
+            Birthday = birthday;
+        }
     }
 }

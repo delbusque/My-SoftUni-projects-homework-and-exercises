@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DystopianSociety
 {
-    public interface INamable
+    public interface ILivingCreater
     {
         public string Name { get; }
+        public DateOnly Birthday { get; }
     }
 }
