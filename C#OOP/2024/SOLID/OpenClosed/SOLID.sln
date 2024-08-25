@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenClosed", "OpenClosed.csproj", "{ADF01200-29B0-4FA2-859A-9A2533E87610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Liskov", "..\Liskov\Liskov.csproj", "{F022F775-6CAF-4007-A464-6DB2C6B3345F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADF01200-29B0-4FA2-859A-9A2533E87610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF01200-29B0-4FA2-859A-9A2533E87610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF01200-29B0-4FA2-859A-9A2533E87610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF01200-29B0-4FA2-859A-9A2533E87610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F022F775-6CAF-4007-A464-6DB2C6B3345F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F022F775-6CAF-4007-A464-6DB2C6B3345F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F022F775-6CAF-4007-A464-6DB2C6B3345F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F022F775-6CAF-4007-A464-6DB2C6B3345F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FCB611A-1630-467D-AF42-370B314C5EDD}
+	EndGlobalSection
+EndGlobal
