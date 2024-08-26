@@ -23,8 +23,8 @@ namespace Drawing
 
         public void Draw(IShape shape)
         {
-            IDrawer matched = drawers.First(d => d.IsMatch(shape));
-            matched.Draw(shape);
+            IDrawer drawer = drawers.First(d => d.IsMatch(shape));
+            drawer.Draw(shape);
         }
     }
 }
